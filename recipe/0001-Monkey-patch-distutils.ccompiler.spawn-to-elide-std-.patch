@@ -12,9 +12,9 @@ diff --git a/setup.py b/setup.py
 index ae86e6c9fb..86c765be20 100644
 --- a/setup.py
 +++ b/setup.py
-@@ -119,6 +119,25 @@ ENABLE_CYTHON_TRACING = os.environ.get(
- ENABLE_DOCUMENTATION_BUILD = os.environ.get(
-     'GRPC_PYTHON_ENABLE_DOCUMENTATION_BUILD', False)
+@@ -124,6 +124,25 @@ class BuildExt(build_ext.build_ext):
+         return filename
+ 
  
 +# Patch ccompiler not to pass -std=c++11 for C code.
 +# This is neccessary on macOS to avoid:
@@ -38,15 +38,14 @@ index ae86e6c9fb..86c765be20 100644
  # There are some situations (like on Windows) where CC, CFLAGS, and LDFLAGS are
  # entirely ignored/dropped/forgotten by distutils and its Cygwin/MinGW support.
  # We use these environment variables to thus get around that without locking
-@@ -334,6 +353,8 @@ PACKAGE_DATA = {
- }
- PACKAGES = setuptools.find_packages(PYTHON_STEM)
+@@ -276,6 +295,7 @@ def extension_modules():
+     else:
+         return extensions
  
 +monkeypatch_spawn_using_cxx11_for_cxx_only()
-+
- setuptools.setup(
-   name='grpcio',
-   version=grpc_version.VERSION,
+ 
+ setuptools.setup(name='grpcio-tools',
+                  version=grpc_version.VERSION,
 -- 
 2.19.1
 
