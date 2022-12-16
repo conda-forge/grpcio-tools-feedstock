@@ -1,37 +1,41 @@
-{% set version = "1.51.1" %}
 {% set name = "grpcio-tools" %}
+{% set version = "1.51.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/grpcio-tools-{{ version }}.tar.gz
   sha256: 8e62d23d3fed9d4f81738f98dd193dbd2e21aed4a8f0dd715e75b5439e649727
-  patches:
-    - 0001-Monkey-patch-distutils.ccompiler.spawn-to-elide-std-.patch
 
 build:
+  skip: true  # [py<37]
+  script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-
   host:
-    - grpcio =={{ version }}
+    - python
+    - cython
     - pip
-    - protobuf >=3.6.0
-    - python
   run:
-    - grpcio =={{ version }}
-    - protobuf >=3.6.0
     - python
+    - protobuf >=4.21.6,<5.0dev
+    - grpcio >=1.51.1
+    - setuptools
 
 test:
   imports:
     - grpc_tools
+  commands:
+    - pip check
+  requires:
+    - pip
+
 
 about:
   home: https://grpc.io
