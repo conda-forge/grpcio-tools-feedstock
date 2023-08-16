@@ -1,4 +1,4 @@
-{% set version = "1.54.2" %}
+{% set version = "1.57.0" %}
 {% set name = "grpcio-tools" %}
 
 package:
@@ -28,7 +28,7 @@ requirements:
     - python
   run:
     - setuptools
-    - grpcio >=1.54.2
+    - grpcio >=1.57.0
     - protobuf >=4.21.6,<5.0dev
     - python
 
