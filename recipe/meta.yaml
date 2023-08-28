@@ -49,3 +49,4 @@ extra:
   recipe-maintainers:
     - martinRenou
     - janjagusch
+    - conda-forge/grpc-cpp
