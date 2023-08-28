@@ -299,6 +299,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@conda-forge/grpc-cpp](https://github.com/conda-forge/grpc-cpp/)
 * [@janjagusch](https://github.com/janjagusch/)
 * [@martinRenou](https://github.com/martinRenou/)
 
