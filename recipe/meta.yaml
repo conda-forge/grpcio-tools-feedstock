@@ -1,6 +1,5 @@
 {% set version = "1.57.0" %}
 
-
 package:
   name: grpcio-tools
   version: {{ version }}
