@@ -21,7 +21,7 @@ requirements:
     - {{ compiler('cxx') }}
 
   host:
-    - grpcio =={{ version }}
+    - grpcio {{ ".".join(version.split('.')[:2]) }}
     - pip
     - protobuf >=3.6.0
     - python
