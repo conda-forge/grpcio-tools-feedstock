@@ -48,6 +48,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - JohanMabille
     - martinRenou
     - janjagusch
     - conda-forge/grpc-cpp
