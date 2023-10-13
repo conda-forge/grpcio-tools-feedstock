@@ -27,6 +27,7 @@ requirements:
     - pip
     - protobuf >=3.6.0
     - python
+    - setuptools  # [py>=312]
   run:
     - setuptools
     - grpcio >=1.58
