@@ -1,4 +1,6 @@
 {% set version = "1.58.0" %}
+# grpcio-tools doesn't always get all patch releases
+{% set maj_min = ".".join(version.split(".")[:2]) %}
 
 package:
   name: grpcio-tools
@@ -21,7 +23,7 @@ requirements:
     - {{ compiler('cxx') }}
 
   host:
-    - grpcio =={{ version }}
+    - grpcio =={{ maj_min }}.*
     - pip
     - protobuf >=3.6.0
     - python
