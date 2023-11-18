@@ -1,4 +1,4 @@
-{% set version = "1.59.2" %}
+{% set version = "1.59.3" %}
 
 package:
   name: grpcio-tools
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/g/grpcio-tools/grpcio-tools-{{ version }}.tar.gz
-  sha256: 75905266cf90f1866b322575c2edcd4b36532c33fc512bb1b380dc58d84b1030
+  sha256: cd160ac4281cd1ae77a2c880377a7728349340b4c91e24285037b57c18e9f651
   patches:
     - 0001-Monkey-patch-distutils.ccompiler.spawn-to-elide-std-.patch
 
@@ -27,7 +27,7 @@ requirements:
     - python
   run:
     - setuptools
-    - grpcio >=1.59.2
+    - grpcio >=1.59.3
     - protobuf >=4.21.6,<5.0dev
     - python
     - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
