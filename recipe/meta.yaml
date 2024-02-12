@@ -1,4 +1,4 @@
-{% set version = "1.57.0" %}
+{% set version = "1.60.1" %}
 
 package:
   name: grpcio-tools
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/g/grpcio-tools/grpcio-tools-{{ version }}.tar.gz
-  sha256: 2f16130d869ce27ecd623194547b649dd657333ec7e8644cc571c645781a9b85
+  sha256: da08224ab8675c6d464b988bd8ca02cccd2bf0275bceefe8f6219bfd4a4f5e85
   patches:
     - 0001-Monkey-patch-distutils.ccompiler.spawn-to-elide-std-.patch
 
@@ -21,13 +21,13 @@ requirements:
     - {{ compiler('cxx') }}
 
   host:
-    - grpcio =={{ version }}
+    - grpcio {{ ".".join(version.split('.')[:2]) }}
     - pip
     - protobuf >=3.6.0
     - python
   run:
     - setuptools
-    - grpcio >=1.57.0
+    - grpcio >=1.60.1
     - protobuf >=4.21.6,<5.0dev
     - python
     - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
@@ -49,6 +49,7 @@ about:
 extra:
   recipe-maintainers:
     - JohanMabille
+    - jjerphan
     - martinRenou
     - janjagusch
     - conda-forge/grpc-cpp
