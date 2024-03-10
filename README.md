@@ -404,6 +404,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@JohanMabille](https://github.com/JohanMabille/)
 * [@conda-forge/grpc-cpp](https://github.com/conda-forge/grpc-cpp/)
 * [@janjagusch](https://github.com/janjagusch/)
 * [@jjerphan](https://github.com/jjerphan/)
