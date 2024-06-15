@@ -1,12 +1,12 @@
-{% set version = "1.62.2" %}
+{% set version = "1.64.1" %}
 
 package:
   name: grpcio-tools
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/g/grpcio-tools/grpcio-tools-{{ version }}.tar.gz
-  sha256: 5fd5e1582b678e6b941ee5f5809340be5e0724691df5299aae8226640f94e18f
+  url: https://pypi.io/packages/source/g/grpcio-tools/grpcio_tools-{{ version }}.tar.gz
+  sha256: 72b3550b91adb8354656ecf0f6d1d4611299044bae11fb1e7cc1d1bb66b8c1eb
   patches:
     - 0001-Monkey-patch-distutils.ccompiler.spawn-to-elide-std-.patch
 
@@ -28,8 +28,8 @@ requirements:
     - python
   run:
     - setuptools
-    - grpcio >=1.62.2
-    - protobuf >=4.21.6,<5.0dev
+    - grpcio >=1.64.1
+    - protobuf <6.0dev,>=5.26.1
     - python
 
 test:
